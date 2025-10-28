@@ -1,0 +1,171 @@
+{
+  "info": {
+    "name": "Employee Management API",
+    "description": "REST API for Employee Management System",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Employee Operations",
+      "item": [
+        {
+          "name": "Add Employee",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"firstName\": \"Jan\",\n  \"lastName\": \"Kowalski\",\n  \"condition\": \"obecny\",\n  \"birthYear\": 1990,\n  \"salary\": 5000.0,\n  \"group\": {\n    \"id\": 1\n  }\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/employee",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "employee"]
+            }
+          }
+        },
+        {
+          "name": "Delete Employee",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/employee/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "employee", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Employees CSV",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/employee/csv",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "employee", "csv"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Group Operations",
+      "item": [
+        {
+          "name": "Get All Groups",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/group",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "group"]
+            }
+          }
+        },
+        {
+          "name": "Add Group",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Development Team\",\n  \"maxSize\": 10\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/group",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "group"]
+            }
+          }
+        },
+        {
+          "name": "Delete Group",
+          "request": {
+            "method": "DELETE",
+            "url": {
+              "raw": "http://localhost:8080/api/group/1",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "group", "1"]
+            }
+          }
+        },
+        {
+          "name": "Get Employees by Group",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/group/1/employee",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "group", "1", "employee"]
+            }
+          }
+        },
+        {
+          "name": "Get Group Fill Status",
+          "request": {
+            "method": "GET",
+            "url": {
+              "raw": "http://localhost:8080/api/group/1/fill",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "group", "1", "fill"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Rating Operations",
+      "item": [
+        {
+          "name": "Add Rating",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"value\": 4.5,\n  \"group\": {\n    \"id\": 1\n  },\n  \"rateDate\": \"2024-01-15\",\n  \"comment\": \"Good performance\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:8080/api/rating",
+              "protocol": "http",
+              "host": ["localhost"],
+              "port": "8080",
+              "path": ["api", "rating"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
